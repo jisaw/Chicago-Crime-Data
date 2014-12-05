@@ -3,13 +3,14 @@ import folium
 
 
 def main():
-    url = "http://data.cityofchicago.org/resource/ijzp-q8t2.json"
-    #url = 'http://data.cityofchicago.org/resource/x2n5-8w5q.json'
+    #url = "http://data.cityofchicago.org/resource/ijzp-q8t2.json"
+    url = 'http://data.cityofchicago.org/resource/x2n5-8w5q.json'
     r = requests.get(url)
     data = r.json()
     print('Data Type:', type(data))
     print('Length:', len(data))
     map_data = []
+    print data
     for d in data:
         try:
             map_data.append([d['primary_type'], d['latitude'], d['longitude']])
